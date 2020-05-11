@@ -6,7 +6,7 @@ chrome.storage.sync.get("userName", (obj) => {
 
 // Store RFI data for PDF processing 
 const storeRFI = () => {
-  const x = document.getElementsByClassName('_3b_y5-7_1_0 _2SIJi-7_1_0').item(0);
+  const x = document.getElementsByClassName('_breadcrumbs_breadcrumbs__crumb__2VhYU _breadcrumbs_breadcrumbs__crumb--active__1zeEL').item(0);
   const rfiTitle = x.innerHTML.split(':')[1].trim().replace("&amp;", "&").replace("/", " ").replace("%", " ").replace("*", " ").replace(":", " ").replace("|", " ").replace("?", " ").replace(">", " ").replace("<", " ")
   const rfiNumberUnsplit = x.innerHTML.split(':')[0]
   const rfiNumber = rfiNumberUnsplit.split('#')[1]

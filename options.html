@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <title>Keenans Procore Helper Options</title>
+    <!-- <html style="height: 600px; width: 800px;"></html> -->
+    <body style="height: 0%; width: 0%;"></body>
+    <title>Procore Helper Options</title>
 </head>
 <body>
-<h1 class="options-page">Keenan's Procore Helper Options</h1>
-
-<form id="set-name">
-    <input type="text" class="input" placeholder="Set Name for Emails" name="setName">
-    <button class="button">Set Name</button>
-</form> 
-
-
-
+    <div class="options-container">
+        <div class="container">
+            <div class="row">
+                <h5 class="options-page">Procore Helper Options</h5>
+            </div>
+            <div class="row">
+                <small class="small-descriptor">Set Name</small>
+                <form id="set-name">
+                    <input type="text" class="input" placeholder="Set Name for Emails" name="setName"></input>
+                    <button class="btn btn-primary mt-2">Set Name</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+<!-- 
+<div class="container-md">
+    <h4 class="options-page">Procore Helper Options</h1> -->
+    <!-- <form id="set-name">
+        <input type="text" class="input" placeholder="Set Name for Emails" name="setName">
+        <button class="button">Set Name</button>
+    </form>  -->
+<!-- 
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Set name</label>
+          <input class="form-control" id="set-name" placeholder="Enter name">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+ -->
 
 <script src="options.js"></script>
 </body>

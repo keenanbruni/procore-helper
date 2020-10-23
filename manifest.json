@@ -7,11 +7,10 @@
     "permissions": [
       "downloads",
       "tabs",
-      "activeTab",
       "storage", 
       "declarativeContent",
       "webNavigation",
-      "https://s3.amazonaws.com/procore-pdf/*",
+      "https://s3.amazonaws.com/*",
       "https://app.procore.com/447678/project/rfi/show/*"
     ],
     "options_page": "options.html",

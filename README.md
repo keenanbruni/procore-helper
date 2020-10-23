@@ -1,6 +1,6 @@
 # Procore Helper
 
-Chrome Extension that automates tedious tasks on Procore, a construction management webapp.
+Chrome Extension that automates tedious tasks on Procore, a construction management webapp. Customized for Hathaway Dinwiddie Construction Company.
 
 ### Current Features
 

@@ -11,7 +11,7 @@
       "declarativeContent",
       "webNavigation",
       "https://s3.amazonaws.com/*",
-      "https://app.procore.com/447678/project/rfi/show/*"
+      "https://app.procore.com/*/project/rfi/show/*"
     ],
     "options_page": "options.html",
     "background": {
@@ -34,7 +34,7 @@
       "128": "images/get_started128.png"
     },
     "content_scripts": [{
-      "matches": ["https://app.procore.com/447678/project/rfi/*"],
+      "matches": ["https://app.procore.com/*/project/rfi/*"],
       "js": ["content.js"],
       "all_frames": true,
       "run_at": "document_end"

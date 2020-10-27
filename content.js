@@ -4,6 +4,12 @@ chrome.storage.sync.get("userName", (obj) => {
   storedUserName = obj.userName
 })
 
+// Gets # of days for cost notification from chrome storage
+let storedCostDays = ''
+chrome.storage.sync.get("costDays", (obj) => {
+  storedCostDays = obj.costDays
+})
+
 // Store RFI data for PDF processing 
 const storeRFI = () => {
   const x = document.getElementsByClassName('_breadcrumbs_breadcrumbs__crumb__2VhYU_QHByb _breadcrumbs_breadcrumbs__crumb--active__1zeEL_QHByb').item(0);
@@ -24,7 +30,7 @@ const setRfiMessage = () => {
   const textArea = document.getElementById('tab_communication_body_ifr').contentDocument.getElementById('tinymce')
   textArea.innerHTML = ''
   signatureEl.textContent = `${storedUserName}, HDCCo`
-  messageEl.textContent = `See response to ${rfiData} attached. Please advise of any cost impacts within (5) business days.` 
+  messageEl.textContent = `See response to ${rfiData} attached. Please advise of any cost impacts within (${storedCostDays}) business days.` 
   textArea.appendChild(messageEl)
   textArea.appendChild(emptyParagraph)
   textArea.appendChild(signatureEl)

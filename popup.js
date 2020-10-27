@@ -5,6 +5,7 @@
 'use strict';
 
 let printRfi = document.getElementById('printRfi');
+let openReadme = document.getElementById('openReadme')
 let rfiNumber = ''
 let rfiTitle = ''
 let rfiUrl = ''
@@ -30,3 +31,4 @@ printRfi.onclick = function(){
         })
     })
 }
+

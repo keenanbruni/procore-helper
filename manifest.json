@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
    
-    "name": "Keenan's Dope Procore Helper",
-    "version": "0.1.0",
-    "description": "Names RFIs before download. Autofills RFI email text.",
+    "name": "HDCCo Procore Helper",
+    "version": "0.1.2",
+    "description": "Current features: Autofills RFI information when saving PDF. Autofills email text body requesting pricing when using Procore RFI email feature.",
     "permissions": [
       "downloads",
       "tabs",

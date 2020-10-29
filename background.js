@@ -4,21 +4,6 @@
 
 'use strict';
 
-// Detects pages for extension to run on
-chrome.runtime.onInstalled.addListener(function() {
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-    chrome.declarativeContent.onPageChanged.addRules([{
-      conditions: [new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: {hostEquals: 'https://app.procore.com/*/project/rfi/*' || 'https://s3.amazonaws.com/procore-pdf/*'},
-      })
-      ],
-          actions: [new chrome.declarativeContent.ShowPageAction()]
-    }]);
-  });
-});
-
-
-
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){ 
   let rfiNumber = request.rfi[0].rfiNumber
   let rfiTitle = request.rfi[1].rfiTitle

@@ -1,15 +1,13 @@
 {
     "manifest_version": 2,
    
-    "name": "HDCCo Procore Helper",
-    "version": "0.1.2",
-    "description": "Current features: Autofills RFI information when saving PDF. Autofills email text body requesting pricing when using Procore RFI email feature.",
+    "name": "Procore Helper",
+    "version": "0.1.3",
+    "description": "Automates tedious Procore tasks.",
     "permissions": [
       "downloads",
       "tabs",
       "storage", 
-      "declarativeContent",
-      "webNavigation",
       "https://s3.amazonaws.com/*",
       "https://app.procore.com/*/project/rfi/show/*"
     ],

@@ -25,6 +25,13 @@
     text-align: center;
 }
 
+#set-companyName {
+    padding: 10px;
+    padding-top: 2px;
+    margin:0;
+    text-align: center;
+}
+
 .small-descriptor {
     padding-left: 10px;
 }

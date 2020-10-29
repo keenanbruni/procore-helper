@@ -1,4 +1,4 @@
-// Renders saved username in options form
+// Renders saved username in options 
 const renderUserName = () => {
     chrome.storage.sync.get("userName", (obj) => {
         document.querySelector("#set-name > input").value = obj.userName
@@ -7,7 +7,7 @@ const renderUserName = () => {
 
 renderUserName()
 
-// Renders saved # of cost days in option form
+// Renders saved # of cost days in options
 const renderCostDays = () => {
     chrome.storage.sync.get("costDays", (obj) => {
         document.querySelector("#set-costs > input").value = obj.costDays
@@ -15,6 +15,15 @@ const renderCostDays = () => {
 }
 
 renderCostDays()
+
+// Renders saved company name in options
+const renderCompanyName = () => {
+    chrome.storage.sync.get("companyName", (obj) => {
+        document.querySelector("#set-companyName > input").value = obj.companyName
+    })
+}
+
+renderCompanyName()
 
 // Username form
 const nameForm = document.getElementById('set-name')
@@ -34,4 +43,14 @@ costsForm.addEventListener('submit', (e) => {
     const costDays = e.target["0"].value;
     chrome.storage.sync.set({'costDays' : costDays}, console.log('Cost Days Set!'))
         renderCostDays()
+})
+
+// Company form
+const companyForm = document.getElementById('set-companyName')
+
+companyForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const companyName = e.target["0"].value
+    chrome.storage.sync.set({'companyName' : companyName}, console.log('Company name set!'))
+    renderCompanyName()
 })

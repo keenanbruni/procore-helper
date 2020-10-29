@@ -10,9 +10,15 @@ chrome.storage.sync.get("costDays", (obj) => {
   storedCostDays = obj.costDays
 })
 
+// Gets company name from chrome storage
+let storedCompany = ''
+chrome.storage.sync.get("companyName", (obj) => {
+  storedCompany = obj.companyName
+})
+
 // Store RFI data for PDF processing 
 const storeRFI = () => {
-  const x = document.getElementsByClassName('_breadcrumbs_breadcrumbs__crumb__2VhYU_QHByb _breadcrumbs_breadcrumbs__crumb--active__1zeEL_QHByb').item(0);
+  const x = document.getElementsByClassName('RfiFormHeader_title__3sRF0').item(0);
   const rfiTitle = x.innerHTML.split(':')[1].trim().replace("&amp;", "&").replace("/", " ").replace(/["']/g, "").replace("%", " ").replace("*", " ").replace(":", " ").replace("|", " ").replace("?", " ").replace(">", " ").replace("<", " ")
   const rfiNumberUnsplit = x.innerHTML.split(':')[0]
   const rfiNumber = rfiNumberUnsplit.split('#')[1]
@@ -29,7 +35,7 @@ const setRfiMessage = () => {
   const rfiData = document.getElementsByClassName('active')[0].innerText
   const textArea = document.getElementById('tab_communication_body_ifr').contentDocument.getElementById('tinymce')
   textArea.innerHTML = ''
-  signatureEl.textContent = `${storedUserName}, HDCCo`
+  signatureEl.textContent = `${storedUserName}, ${storedCompany}`
   messageEl.textContent = `See response to ${rfiData} attached. Please advise of any cost impacts within (${storedCostDays}) business days.` 
   textArea.appendChild(messageEl)
   textArea.appendChild(emptyParagraph)
@@ -48,4 +54,14 @@ if (window.location.href.includes('subtab=email')){
   setTimeout(function(){setRfiMessage()}, 3000);
 }
 
-console.log('Keenans Procore Helper Enabled')
+// Injects PDF iframe upon message from popup
+// chrome.runtime.onMessage.addListener(
+//   function(message, callback) {
+//     if (message == “injectPdf”){
+//       chrome.tabs.executeScript({
+//         file: 'rfiDownloadScript.js'
+//       });
+//     }
+//  });
+
+console.log('Procore Helper Enabled')

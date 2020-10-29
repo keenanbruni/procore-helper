@@ -12,27 +12,21 @@
             <div class="row">
                 <h5 class="options-page">Procore Helper Options</h5>
             </div>
+
             <div class="row">
-                <small class="small-descriptor">Set Name</small>
-                <form id="set-name">
-                    <input type="text" class="input" placeholder="Set Name for Emails" name="setName"></input>
-                    <button class="btn btn-primary mt-2">Save</button>
+                <form id="options-form">
+                    <small>Name</small>
+                    <input type="text" id="setName" class="input" placeholder="Set Name for Emails" name="setName"></input>
+                    <small># Of Days for $ Notification</small>
+                    <input type="text" id="setCosts" class="input" placeholder="# Days for Costs" name="setCosts"></input>
+                    <small>Company Name</small>
+                    <input type="text" id="setCompanyName" class="input" placeholder="Company Name" name="setCompanyName"></input>
+                    <div class="options-button-container">
+                        <button class="btn btn-primary mt-2">Save</button>
+                    </div>
                 </form>
             </div>
-            <div class="row">
-                <small class="small-descriptor">Set # Of Days for $ Notification</small>
-                <form id="set-costs"> 
-                    <input type="text" class="input" placeholder="# Days for Costs" name="setCosts"></input>
-                    <button class="btn btn-primary mt-2">Save</button>
-                </form>
-            </div>
-            <div class="row">
-                <small class="small-descriptor">Set Company Name</small>
-                <form id="set-companyName"> 
-                    <input type="text" class="input" placeholder="Company Name" name="setCompanyName"></input>
-                    <button class="btn btn-primary mt-2">Save</button>
-                </form>
-            </div>
+
         </div>  
     </div>
 

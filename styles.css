@@ -4,7 +4,12 @@
     justify-content: center;
     text-align: center;
 }
-
+#options-form {
+    padding: 10px;
+    padding-top: 2px;
+    margin:0;
+    text-align: left;
+}
 .popup-container {
     width: fit-content;
     height: fit-content;
@@ -32,10 +37,6 @@
     text-align: center;
 }
 
-.small-descriptor {
-    padding-left: 10px;
-}
-
 .options-page {
     padding: 10px;
     margin:auto;
@@ -57,6 +58,10 @@
     padding: 20%;
     width: fit-content;
     height: fit-content;
+}
+
+.options-button-container {
+    text-align: center;
 }
 
 

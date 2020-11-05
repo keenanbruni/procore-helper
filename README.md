@@ -1,5 +1,7 @@
 # Procore Helper
 
+[Procore Helper - Chrome Web Store](https://chrome.google.com/webstore/detail/procore-helper/cdihmnijfeedjcbpiicbjgmojigmepbh?hl=en&authuser=0)
+
 Chrome Extension that automates tedious tasks on Procore, a construction management webapp.
 
 ### Current Features

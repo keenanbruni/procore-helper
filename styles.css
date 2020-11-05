@@ -4,37 +4,28 @@
     justify-content: center;
     text-align: center;
 }
+
+.btn-primary {
+    background-color: #f47e41;
+    border-color: #f47e41;
+}
+
+.btn-primary:hover {
+    background-color: #d66f3b;
+    border-color: #d66f3b;
+}
+
 #options-form {
     padding: 10px;
     padding-top: 2px;
     margin:0;
     text-align: left;
 }
+
 .popup-container {
     width: fit-content;
     height: fit-content;
     margin-bottom: 10px;
-}
-
-#set-name {
-    padding: 10px;
-    padding-top: 2px;
-    margin:0;
-    text-align: center;
-}
-
-#set-costs {
-    padding: 10px;
-    padding-top: 2px;
-    margin:0;
-    text-align: center;
-}
-
-#set-companyName {
-    padding: 10px;
-    padding-top: 2px;
-    margin:0;
-    text-align: center;
 }
 
 .options-page {
@@ -52,7 +43,6 @@
 .popup-title-container {
     width:200px
 }
-
 
 .options-container {
     padding: 20%;

@@ -12,6 +12,6 @@ Chrome Extension that automates tedious tasks on Procore, a construction managem
 
 * Auto-populates email text body with a message requesting cost impacts when distributing RFIs. Click "Options" on the Chrome Extension to enter your name and duration of days that the subs have to notify general contractor of costs. This message will autofill when using Procore's "Email" feature.
 
-![Image of RFI Email Page](https://i.imgur.com/cqoBrob.jpg)
+![Image of RFI Email Page](https://i.imgur.com/c2BEPg3.jpg)
 
 Please let me know what other features you'd like to see!

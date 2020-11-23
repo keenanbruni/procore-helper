@@ -22,6 +22,14 @@
     text-align: left;
 }
 
+#custom-form {
+    padding: 10px;
+    padding-top: 2px;
+    margin:0;
+    text-align: left;  
+    width: 202px;
+}
+
 .popup-container {
     width: fit-content;
     height: fit-content;
@@ -52,6 +60,11 @@
 
 .options-button-container {
     text-align: center;
+}
+
+#setCustomMessage {
+    height: 125px;
+    width: -webkit-fill-available;
 }
 
 

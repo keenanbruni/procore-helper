@@ -18,6 +18,12 @@ chrome.storage.sync.get("companyName", (obj) => {
   storedCompany = obj.companyName
 })
 
+// Gets custom email message from chrome storage
+let customMessage = ''
+chrome.storage.sync.get("customMessage", (obj) => {
+  customMessage = obj.customMessage
+})
+
 // Gets RFI ID# & Project ID# from RFI Page URL - RFI ID# is [7] in the split URL string array, project ID# is [3]
 const urlData = () => {
   const url = window.location.href
@@ -39,17 +45,28 @@ const storeRFI = () => {
 
 // Autofill RFI email text. Only want this to fire on the email page.
 const setRfiMessage = () => {
-  const messageEl = document.createElement('p')
-  const emptyParagraph = document.createElement('br')
-  const signatureEl = document.createElement('p')
-  const rfiInfo = document.getElementsByClassName('active')[0].innerText
-  const textArea = document.getElementById('tab_communication_body_ifr').contentDocument.getElementById('tinymce')
-  textArea.innerHTML = ''
-  signatureEl.textContent = `${storedUserName}, ${storedCompany}`
-  messageEl.textContent = `See response to ${rfiInfo} attached. Please advise of any cost impacts within (${storedCostDays}) business days.` 
-  textArea.appendChild(messageEl)
-  textArea.appendChild(emptyParagraph)
-  textArea.appendChild(signatureEl)
+  chrome.storage.sync.get("customCheckboxStatus", (obj) => {
+    if (obj.customCheckboxStatus == true) {
+      const messageEl = document.createElement('p')
+      const textArea = document.getElementById('tab_communication_body_ifr').contentDocument.getElementById('tinymce')
+      textArea.innerHTML = ''
+      textArea.setAttribute("style", "white-space: pre-wrap;")
+      messageEl.textContent = customMessage
+      textArea.appendChild(messageEl)
+    } else {
+      const messageEl = document.createElement('p')
+      const emptyParagraph = document.createElement('br')
+      const signatureEl = document.createElement('p')
+      const rfiInfo = document.getElementsByClassName('active')[0].innerText
+      const textArea = document.getElementById('tab_communication_body_ifr').contentDocument.getElementById('tinymce')
+      textArea.innerHTML = ''
+      signatureEl.textContent = `${storedUserName}, ${storedCompany}`
+      messageEl.textContent = `See response to ${rfiInfo} attached. Please advise of any cost and/or schedule impacts within (${storedCostDays}) business days.` 
+      textArea.appendChild(messageEl)
+      textArea.appendChild(emptyParagraph)
+      textArea.appendChild(signatureEl)
+    }
+})
 }
 
 // Triggers 'storeRFI' on the main RFI page
@@ -70,11 +87,11 @@ if (window.location.href.includes('project/rfi/show/')){
   const printRfiButton = document.createElement('button')
   printRfiButton.setAttribute("style", "height: 35px; width: 237px;")
   printRfiButton.setAttribute("id", "procore-helper-print-btn")
-  printRfiButton.innerText = "Print RFI"
+  printRfiButton.innerText = "Export PDF"
   sidebarDiv.appendChild(printRfiButton)
 }
 
-// Creates iframe of RFI PDF and appends it to body of RFI page
+// Triggers sequence to download RFI PDF
 const injectPdf = () => {
   const iframeRfi = document.createElement('iframe')
   iframeRfi.src = `https://app.procore.com/${projectId}/project/rfi/view_pdf.pdf?id=${rfiId}&only_official=false`
@@ -94,7 +111,7 @@ const injectPdf = () => {
   }
 }
 
-// Injects PDF (subject to change)
+// Export PDF Event
 if (window.location.href.includes('project/rfi/show/')){
   document.getElementById('procore-helper-print-btn').addEventListener("click", function (){
     injectPdf()

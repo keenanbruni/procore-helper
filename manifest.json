@@ -2,11 +2,10 @@
     "manifest_version": 2,
    
     "name": "Procore Helper",
-    "version": "0.1.5",
+    "version": "0.1.7",
     "description": "Automates tedious Procore tasks.",
     "permissions": [
       "downloads",
-      "tabs",
       "storage", 
       "https://s3.amazonaws.com/*",
       "https://app.procore.com/*/project/rfi/show/*"

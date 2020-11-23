@@ -13,6 +13,24 @@
                 <h5 class="options-page">Procore Helper Options</h5>
             </div>
 
+            <div class="d-flex px-3 pb-1 flex-column justify-content-center">
+                <input type="checkbox" class="form-check-input" style="margin-top: 0;" id="customMessageBox">
+                    <small>
+                        Custom Message
+                    </small>
+                </input>
+            </div>
+
+            <div class="row">
+                <form id="custom-form">
+                    <small>Custom Email Message</small>
+                    <textarea type="text" id="setCustomMessage" class="input" placeholder="Set Message" name="setName"></textarea>
+                    <div class="options-button-container">
+                        <button class="btn btn-primary mt-2">Save</button>
+                    </div>
+                </form>
+            </div>
+
             <div class="row">
                 <form id="options-form">
                     <small>Name</small>
@@ -31,5 +49,6 @@
     </div>
 
 <script src="options.js"></script>
+
 </body>
 </html>
